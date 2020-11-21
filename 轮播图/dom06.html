@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 150px;
+				border: solid 1px black;
+				position: relative;
+				overflow: hidden;
+			}
+			img{
+				width: 200px;
+				height: 150px;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			//加载完成事件
+			onload=function(){
+				//得到页面中所有图片
+				var imgs=document.getElementsByTagName("img")
+				//验证图片数量
+				// console.log(imgs.length)
+				// console.log(imgs)
+				//遍历图片
+				for(var i = 0;i<imgs.length;i++){
+					var img = imgs[i];
+					//修改图片的位置
+					img.style.top="0";
+					img.style.left=i*200+"px"
+				}
+			}
+			//开启定时器每隔一段时间移动一张图片
+			 var timeId = setInterval(movefn,3000)
+			//创建移动一张图片的方法
+			function movefn(){
+				//开启图片移动的定时器
+			 var moveId=setInterval(function(){
+				//得到所有图片并且遍历每一个图片
+				var imgs = document.getElementsByTagName("img");
+				for(var i = 0;i<imgs.length;i++){
+				//得到每一张图片
+					var img = imgs[i];
+				//移动图片
+				//得到图片的位置
+					var oldLeft = parseFloat(img.style.left)
+					oldLeft -= 2;
+				//如果图片移出，则把第一张图片放到最后面
+					if(oldLeft<=-200){
+						oldLeft=400
+						//定时器停止
+						clearInterval(moveId)
+					}
+					//赋值回去
+					img.style.left = oldLeft+"px";
+				}
+			},10)
+			}
+			//定时器停止
+			function stop(){
+				clearInterval(timeId)
+			}
+			//重新开启定时器
+			function start(){
+				//每次开启新的定时器时，把上一个定时器停止
+				//避免连续开启多个定时器
+				clearInterval(timeId)
+				timeId = setInterval(movefn,3000);
+			}
+			//页面失去焦点
+			onblur = function(){
+				stop();
+			}
+			//页面获取焦点时开始
+			onfocus = function(){
+				start();
+			}
+		</script>
+	</head>
+	<body>
+		<!-- onmouseover鼠标移入事件，onmouseout鼠标移出事件 -->
+		<div onmouseover="stop()" onmouseout="start()">
+			<img src="imgs/00.jpg">
+			<img src="imgs/01.jpg">
+			<img src="imgs/02.jpg">
+		</div>
+	</body>
+</html>

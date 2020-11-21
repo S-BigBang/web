@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 150px;
+				border: solid 1px red;
+				position: relative;
+			}
+			img{
+				width: 200px;
+				height: 150px;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			//加载完成事件
+			onload=function(){
+				//得到页面中所有图片
+				var imgs=document.getElementsByTagName("img")
+				//验证图片数量
+				// console.log(imgs.length)
+				// console.log(imgs)
+				//遍历图片
+				for(var i = 0;i<imgs.length;i++){
+					var img = imgs[i];
+					//修改图片的位置
+					img.style.top="0";
+					img.style.left=i*200+"px"
+				}
+			}
+			
+		</script>
+	</head>
+	<body>
+		<div>
+			<img src="imgs/00.jpg">
+			<img src="imgs/01.jpg">
+			<img src="imgs/02.jpg">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 200px;
+				height: 150px;
+			}
+			div{
+				width: 200px;
+				height: 150px;
+				overflow: hidden;
+			}
+		</style>
+		<script type="text/javascript">
+			var x = 0;
+			//开启一个每1秒钟执行一次的定时器
+			setInterval(function(){
+				x++;
+				// var visbleIndex = x%3;
+				// console.log(visbleIndex);
+				//通过标签名获取页面中的多个元素
+				var imgs = document.getElementsByTagName("img");
+				//显示visble下标Index   visbleIndex显示的下标
+				var visbleIndex = x%imgs.length;
+				//遍历每一张图片
+				for(var i=0;i<imgs.length;i++){
+					//得到遍历的每一张图片
+					var img= imgs[i];
+					//判断隐藏还是显示
+					if(i==visbleIndex){
+						//显示
+						img.style.display="block";
+					}else{
+						//隐藏
+						img.style.display="none";
+					}
+				}
+			},1000)
+		</script>
+	</head>
+	<body>
+		<div>
+		<img src="img/00.jpg">
+		<img src="img/01.jpg">
+		<img src="img/02.jpg">
+		</div>
+	</body>
+</html>

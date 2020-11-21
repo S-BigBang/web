@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				height: 150px;
+				position: relative;
+				overflow: hidden;
+			}
+			img{
+				width: 200px;
+				height: 150px;
+				position: absolute;
+			}
+		</style>
+		<script type="text/javascript">
+			onload = function(){
+				var imgs = document.getElementsByTagName("img");
+				// alert(imgs.length);
+				for(var i=0;i<imgs.length;i++){
+					var img = imgs[i];
+					img.style.left=i*200+"px";
+				}
+			}
+			var timeId=setInterval(movefn,2000);
+			function movefn(){
+				var moveId=setInterval(function(){
+					var imgs = document.getElementsByTagName("img");
+						for(var i=0;i<imgs.length;i++){
+							var img = imgs[i];
+							var oleft=parseFloat(img.style.left);
+							oleft-=4;
+							img.style.left=oleft+"px";
+							if(oleft<-200){
+								oleft=400;
+								clearInterval(moveId);
+							}
+							img.style.left=oleft+"px";
+						}
+				},10);
+			}
+			function stop(){
+				clearInterval(timeId);
+			}
+			function start(){
+				clearInterval(timeId);
+				timeId = setInterval(movefn,2000);
+			}
+			onblur=function(){
+				stop();
+			}
+			onfocus=function(){
+				start();
+			}
+		</script>
+	</head>
+	<body>
+		<div onmouseover="stop()" onmouseout="start()">
+			<img src="00.jpg">
+			<img src="01.jpg">
+			<img src="02.jpg">
+		</div>
+	</body>
+</html>
