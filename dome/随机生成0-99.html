@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+				// 定义一个空数组
+				var arr = [];
+				// for循环	生成一百个数
+				for(var i = 0;i<100;i++){
+					//一百以内的随机数
+					var arrNum = parseInt(Math.random()*100);
+					//定义一个boolean值	flag为true
+					var flag = true;
+					//for循环遍历一遍
+					for(var j = 0;j<arr.length;j++){
+						//判断是否有重复的
+						if(arrNum == arr[j]){
+							//定义一个boolean值	flag为false
+							flag = false;
+							//重复则跳出循环
+							break;
+						}
+					}
+					//如果flag为true则走arr.push(arrNum)
+					//如果flag为false则走i--
+					if(flag){
+						arr.push(arrNum);
+					}else{
+						i--;
+					}
+					}
+					console.log(arr);
+		
+				var arr= [];
+				for(var i = 0;i<100;i++){
+					var arrNum=parseInt(Math.random()*100)+1;
+					var flag = true;
+					for(var j=0;j<arr.length;j++){
+						if(arrNum == arr[j]){
+							flag = false;
+							break;
+					}
+				}
+				if(flag){
+					arr.push(arrNum);
+				}else{
+					i--;
+				}
+				}
+				console.log(arr)
+		</script>
+	</head>
+	<body>
+	</body>
+</html>

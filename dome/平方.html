@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function myfn(){
+				//通过
+				var inp = document.getElementById("i1");
+				// var div = document.getElementById("d1")
+				//判断输入的是否是数
+				if(isNaN(inp.value)){	//不是数
+					//往元素里面添加文本内容
+					inp.value = "输入错误";
+				}else{	//是数
+					inp.value = inp.value*inp.value;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="i1">
+		<input type="button" value="平方" onclick="myfn()"/>
+		<!-- <div id="d1"></div> -->
+	</body>
+</html>

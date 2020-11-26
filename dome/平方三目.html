@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function f1(){
+				var inp = document.getElementById("i1");
+				inp.value = isNaN(inp.value) ? "输出错误" : inp.value*inp.value 
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="i1">
+		<input type="button" value="平方" onclick="f1()">
+	</body>
+</html>

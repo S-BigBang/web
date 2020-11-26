@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function fn1(x){
+				switch(x){
+					case 1:
+						var myli = document.createElement("li");
+						myli.innerText = i1.value;
+						myul.appendChild(myli);
+						break;
+					case 2:
+						var myli = document.createElement("li");
+						myli.innerText = i1.value;
+						myul.insertBefore(myli,sh);
+						break;
+					case 3:
+						myul.removeChild(myul.lastElementChild);
+						break;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="i1"/>
+		<input type="button" value="添加" onclick="fn1(1)">
+		<input type="button" value="插入" onclick="fn1(2)">
+		<input type="button" value="删除" onclick="fn1(3)">
+		<ul id="myul">
+			<li>北京</li>
+			<li id="sh">上海</li>
+			<li>广州</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+		function fn(){
+				var inp1 = document.getElementById("i1");
+				var inp2 = document.getElementById("i2");
+				
+				// if(inp1.value%100 != 0 && inp1.value%4 == 0 || inp1.value%400 == 0){
+				// 	inp2.value="闰年"
+				// }else{
+				// 	inp2.value="平年"
+				// }0
+				inp2.value = (inp1.value%4 == 0 && inp1.value%100 != 0 || inp1.value%400 == 0)? "闰年":"平年";
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="i1">
+		<input type="button" value="按钮" onclick="fn()"/>
+		<input type="text" id="i2">
+	</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				width: 200px;
+				border: 4px #CCCCCC solid;
+				margin: 0 auto;
+				overflow: hidden;
+				border-radius: 4px;
+			}
+			input{
+				width: 45px;
+				height: 45px;
+				border: 4px #CCCCCC solid;
+				margin: 4px 0 4px 4px;
+				float: left;
+				border-radius: 4px;
+			}
+			p{
+				width: 135px;
+				height: 37px;
+				border: 4px #CCCCCC solid;
+				margin: 4px 0 4px 4px;
+				float: left;
+				border-radius: 4px;
+				line-height: 37px;
+			}
+		</style>
+		<script type="text/javascript">
+			function fn(a){
+				if(a=="C"){
+					p1.innerHTML="";
+				}else if(a=="="){
+					p1.innerHTML=eval(p1.innerHTML);
+				}else{
+				p1.innerHTML+=a;
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<div>
+			<p id="p1"></p>
+			<input type="button" value="C" onclick="fn('C')">
+			<input type="button" value="7" onclick="fn('7')">
+			<input type="button" value="8" onclick="fn('8')">
+			<input type="button" value="9" onclick="fn('9')">
+			<input type="button" value="/" onclick="fn('/')">
+			<input type="button" value="4" onclick="fn('4')">
+			<input type="button" value="5" onclick="fn('5')">
+			<input type="button" value="6" onclick="fn('6')">
+			<input type="button" value="*" onclick="fn('*')">
+			<input type="button" value="1" onclick="fn('1')">
+			<input type="button" value="2" onclick="fn('2')">
+			<input type="button" value="3" onclick="fn('3')">
+			<input type="button" value="-" onclick="fn('-')">
+			<input type="button" value="0" onclick="fn('0')">
+			<input type="button" value="." onclick="fn('.')">
+			<input type="button" value="=" onclick="fn('=')">
+			<input type="button" value="+" onclick="fn('+')">
+			
+		</div>
+	</body>
+</html>

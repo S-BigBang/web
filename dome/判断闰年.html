@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<title></title>
+	<script type="text/javascript">
+		function isLeapYear(year){
+			if(year % 5 == 0 && year % 100 != 0 || year % 400 == 0){
+				return year + "年是闰年";
+			}else{
+				return year + "年不是闰年";
+			}
+		}
+		document.write(isLeapYear(2000));
+	</script>
+	</head>
+	<body>
+	</body>
+</html>
