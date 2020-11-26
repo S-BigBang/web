@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			setInterval(function(){
+				var d = new Date();
+				myh1.innerText = d.toLocaleTimeString();
+			},1000);
+		  	function myfn(){
+				if(i1.value==""){
+					i1.value=0;
+				}
+				if(i2.value==""){
+					i2.value=0;
+				}
+				if(i3.value==""){
+					i3.value=0;
+				}
+				var seconds = parseInt(i3.value)+parseInt(i2.value)*60+parseInt(i1.value)*3600;
+				var timeId = setInterval(function(){
+					seconds--;
+					var hours = parseInt(seconds/3600);
+					i1.value=hours;
+					var minutes = parseInt((seconds%3600)/60);
+					i2.value=minutes;
+					i3.value = seconds%60;
+					if(seconds==0){
+						clearInterval(timeId);
+						alert("时间到");
+					}
+				},1000)
+			}
+			function fn(){
+				i1.value="";
+				i2.value="";
+				i3.value="";
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="myh1"></h1>
+		<input type="text" placeholder="小时" id="i1">
+		<input type="text" placeholder="分钟" id="i2">
+		<input type="text" placeholder="秒" id="i3">
+		<input type="button" value="倒计时开始" onclick="myfn()">
+	</body>
+</html>

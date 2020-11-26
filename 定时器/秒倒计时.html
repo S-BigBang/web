@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			setInterval(function(){
+				var d = new Date();
+				myh1.innerText = d.toLocaleTimeString();
+			},1000);
+			// function myfn(){
+			// 	setInterval(function(){
+			// 		var i11 = i1.value;
+			// 			i11--
+			// 			i1.value=i11;
+			// 	},1000)
+			// }
+			
+			function myfn(){
+				var seconds = parseInt(i1.value);
+				var timeId=setInterval(function(){
+					seconds--;
+					i1.value=seconds;
+					if(seconds==0){
+						clearInterval(timeId);
+						alert("时间到");
+					}
+				},1000)
+			}
+		</script>
+	</head>
+	<body>
+		<h1 id="myh1"></h1>
+		<input type="text" id="i1">
+		<input type="button" value="倒计时" onclick="myfn()">
+	</body>
+</html>

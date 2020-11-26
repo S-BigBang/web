@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			function myfn(){
+				var seconds = parseInt(i3.value)+parseFloat(i2.value)*60;
+				var timeId = setInterval(function(){
+					seconds--;
+					var minutes = parseInt(seconds/60);
+					i2.value=minutes;
+					i3.value=seconds%60;
+					if(seconds==0){
+						clearInterval(timeId);
+						alert("时间到");
+					}
+				},1000)
+			}
+		</script>
+	</head>
+	<body>
+		<input type="text" id="i2">
+		<input type="text" id="i3">
+		<input type="button" onclick="myfn()" value="倒计时">
+	</body>
+</html>

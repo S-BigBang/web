@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<script type="text/javascript">
+			//setInterval(function(){},1000);
+			//每隔一秒钟调用一次addfn方法
+			setInterval(addfn,1000);
+			function addfn(){
+				//得到1000以内的随机数
+				var x = parseInt(Math.random()*1000);
+				var y = parseInt(Math.random()*1000);
+				//创建元素对象
+				var img = document.createElement("img");
+				//设置图片
+				img.src="00.jpg";
+				//修改图片的定位方式绝对定位
+				img.style.position= "absolute";
+				//修改图片的距离左上角的距离
+				img.style.left = x+"px";
+				img.style.top = y+"px";
+				//在网页中添加元素对象
+				document.body.appendChild(img);
+			}
+		</script>
+	</head>
+	<body>
+	</body>
+</html>
